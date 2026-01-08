@@ -20,11 +20,12 @@ import lombok.Setter;
 @Table(name= "TB-users")
 @RequiredArgsConstructor
 public class UserModel  implements Serializable{
+	 
    private static final long serialVersion = 1L;
 	 @Id
 	 @GeneratedValue(strategy = GenerationType.AUTO)
 	 private UUID userId;
-	 private String emal;
+	 private String email;
      private String nome;
 	
 }

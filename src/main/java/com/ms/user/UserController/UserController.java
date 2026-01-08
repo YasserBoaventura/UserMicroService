@@ -21,13 +21,13 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class UserController {
 
-	private  final UserService userSerivce;
+	private  final UserService userService;
 	
 	@PostMapping("/save")
 	public ResponseEntity<UserModel> save(@RequestBody @Valid UserRecoredDTO userRecoredDTO){
 	var userModel = new UserModel();
 	BeanUtils.copyProperties(userRecoredDTO, userModel);
-		return ResponseEntity.status(HttpStatus.OK).body(userModel); 
+		return ResponseEntity.status(HttpStatus.OK).body(userService.save(userModel));  
 	}
-	
+	 
 }
