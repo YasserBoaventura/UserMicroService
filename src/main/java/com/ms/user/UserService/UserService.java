@@ -11,10 +11,10 @@ import lombok.RequiredArgsConstructor;
 @Service
 @RequiredArgsConstructor
 public class UserService {
-	
+	                
 	private final UserRepository userRepository;
-	
-	@Transactional
+	 
+	@Transactional   
 	public UserModel save(UserModel userModel) {
 		return userRepository.save(userModel); 
 	} 

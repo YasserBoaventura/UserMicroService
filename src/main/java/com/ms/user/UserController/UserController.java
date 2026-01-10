@@ -17,17 +17,18 @@ import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 
 @RestController
-@RequestMapping
+@RequestMapping("/users")
 @RequiredArgsConstructor
-public class UserController {
-
-	private  final UserService userService;
-	
-	@PostMapping("/save")
-	public ResponseEntity<UserModel> save(@RequestBody @Valid UserRecoredDTO userRecoredDTO){
-	var userModel = new UserModel();
-	BeanUtils.copyProperties(userRecoredDTO, userModel);
-		return ResponseEntity.status(HttpStatus.OK).body(userService.save(userModel));  
-	}
+public class UserController {  
+  
+	private  final UserService userService;      
 	 
-}
+	@PostMapping("/save") 
+	public ResponseEntity<UserModel> save(@RequestBody @Valid UserRecoredDTO userRecoredDTO){
+    var userModel = new UserModel(); 
+	BeanUtils.copyProperties(userRecoredDTO, userModel);  
+		return ResponseEntity.status(HttpStatus.OK).body(userService.save(userModel));  
+	}  
+	 
+	    
+} 
