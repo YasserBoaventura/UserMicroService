@@ -66,7 +66,7 @@
             <artifactId>jackson-datatype-jsr310</artifactId>
         </dependency>
         
-        <!-- Dependências de teste CORRETAS -->
+        <!-- Dependências de teste -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
