@@ -21,7 +21,7 @@ import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 
 @RestController
-@RequestMapping("/users")
+@RequestMapping("/users") 
 @RequiredArgsConstructor
 public class UserController {  
   
@@ -32,11 +32,12 @@ public class UserController {
     var userModel = new UserModel(); 
 	BeanUtils.copyProperties(userRecoredDTO, userModel);  
 		return ResponseEntity.status(HttpStatus.OK).body(userService.save(userModel));  
-	}    
+	}      
 	@GetMapping("/findAll") 
 	public ResponseEntity<List<UserModel>>  findAll(){
 		return ResponseEntity.ok(userRepository.findAll()); 
 	}
+	
 	 
 	    
 } 

@@ -25,8 +25,8 @@ public class UserProducer {
 		 emailDTO.setUserId(userModel.getUserId());
 		 emailDTO.setEmailTo(userModel.getEmail());
 		 emailDTO.setSubject("cadastro realizado com sucesso");
-		 emailDTO.setText(userModel.getNome()+", seja bem vindo(a) agradecemos ao seu cadastro aproveite os recursos da nossa plataforma");
-        
+		 emailDTO.setText(userModel.getNome()+", seja bem vindo(a) agradecemos o seu cadastro aproveite os recursos da nossa plataforma!");
+          //enviando a menssagem pra o broker 
 		 rabbitTemplate.convertAndSend("",routingKey, emailDTO);
 		 System.out.println("estou a converter"+userModel.getNome());
 	 }   
